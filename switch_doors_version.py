@@ -110,6 +110,10 @@ def main():
 
         print("Current losses: ", losses)
 
+        print("Win Percentage: ", (wins / 1000) * 100, "%")
+
+        print("Loss Percentage: ", (losses/ 1000) * 100, "%")
+
     print("\nOut of 1000 total games, switching doors resulted in {} wins and {} losses!\n".format(wins, losses))
 
                               #MAIN
