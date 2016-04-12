@@ -73,42 +73,42 @@ def main():
     wins = 0
     losses = 0
 
+
     for _ in range(1000):
 
-
+        print("\nWelcome contestant, let's transcend time and space and simulate 1000 games!\n")
         doors = [1, 2, 3]
 
         clear()
 
         #Prize door is chosen
         prize_door = choose_prize_door()
-        print("\nPrize door: ", prize_door)
 
 
         #Contestant chooses initial door selection
         first_door_selection = contestant_chooses_initial_door()
-        print("\nContestant first door selection: ", first_door_selection)
 
 
         #Establish eligible doors to eliminate
         expendable_doors = choose_goat_door(prize_door, first_door_selection, doors)
-        print("\nHere's the goat door dude! ", expendable_doors)
+
 
         #Host asks to choose from final two doors
         doors = eliminiate_a_door(expendable_doors, doors)
-        print("\nPlease choose from one of these doors: ", doors)
+
 
 
         verdict = final_door_selection(first_door_selection, prize_door)
-        print(verdict)
+
 
         wins, losses = keeping_score_of_wins_and_losses(verdict, wins, losses)
 
-        print(wins)
 
-        print(losses)
+        print("Current wins: ", wins)
 
-        
+        print("Current losses: ", losses)
+
+    print("\nOut of 1000 total games, not switching doors resulted in {} wins and {} losses!\n".format(wins, losses))
 
                               #MAIN
 #------------------------------------------------------------------------------#
