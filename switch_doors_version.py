@@ -42,10 +42,12 @@ def choose_goat_door(prize_door, first_door_selection, doors):
     return expendable_doors
 
 
-def eliminiate_a_door(expendable_door, doors):
+def eliminiate_a_door(expendable_door, doors, first_door_selection):
 
     if expendable_door in doors:
         doors.remove(expendable_door)
+
+
     return doors
 
 
@@ -89,17 +91,19 @@ def main():
         first_door_selection = contestant_chooses_initial_door()
         print("\nContestant first door selection: ", first_door_selection)
 
-
+        doors.remove(first_door_selection)
         #Establish eligible doors to eliminate
         expendable_doors = choose_goat_door(prize_door, first_door_selection, doors)
         print("\nHere's the goat door dude! ", expendable_doors)
 
         #Host asks to choose from final two doors
-        doors = eliminiate_a_door(expendable_doors, doors)
+        doors = eliminiate_a_door(expendable_doors, doors, first_door_selection)
+
+
         print("\nPlease choose from one of these doors: ", doors)
 
 
-        verdict = final_door_selection(first_door_selection, prize_door)
+        verdict = final_door_selection(doors[0], prize_door)
         print(verdict)
 
         wins, losses = keeping_score_of_wins_and_losses(verdict, wins, losses)
@@ -107,8 +111,6 @@ def main():
         print(wins)
 
         print(losses)
-
-        
 
                               #MAIN
 #------------------------------------------------------------------------------#
