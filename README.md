@@ -15,10 +15,10 @@ People are biased towards sticking with what they’ve chosen, and the vast majo
 
 The primary task for this program is to run a Monty Hall-type simulation. It'll prove that switching doors is the best strategy by simulating 1000 games using each approach (keep or switch doors) and comparing the winning percentage.
 
-##Running The simulation
+##Running The Simulation
 
 There are two versions of the game here. The first (monty_hall.py) will run a 1,000 simulations of the game and NOT change doors after the initial goal reveal. The second (switch_doors_version.py) will run a 1,000 simulations of the game and SWITCH doors after the initial goal reveal.
 
 Since each version shows a statistical output of victories at the end of the simulation, its quite apparent (although somewhat counterintuitive!) that switching doors results in twice the likelihood of winning!
 
-This program was written in Python 3.5.1 and requires no additional installs. 
+This program was written in Python 3.5.1 and requires no additional installs.
