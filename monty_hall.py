@@ -1,12 +1,8 @@
 import os
 import random
 
-
-
                               #FUNCTIONS
 #------------------------------------------------------------------------------#
-
-
 victory = "\nVictory!"
 defeat = "\nHindsight is 20/20! Enjoy the goat!"
 
@@ -19,13 +15,11 @@ def clear():
 
 
 def choose_prize_door():
-
     return random.randint(1, 3)
 
 
 def contestant_chooses_initial_door():
-
-    return random.randint(1,3)
+    return random.randint(1, 3)
 
 
 def choose_goat_door(prize_door, first_door_selection, doors):
@@ -35,7 +29,6 @@ def choose_goat_door(prize_door, first_door_selection, doors):
     for door in doors:
         if door != prize_door and door != first_door_selection:
             expendable_doors.append(door)
-
 
     expendable_doors = random.choice(expendable_doors)
 
@@ -49,30 +42,22 @@ def eliminiate_a_door(expendable_door, doors):
     return doors
 
 
-
 def final_door_selection(first_door_selection, prize_door):
-
     return first_door_selection == prize_door
 
 
 def keeping_score_of_wins_and_losses(verdict, wins, losses):
-
-
     if verdict:
-         wins += 1
-
+        wins += 1
     else:
         losses += 1
-
     return wins, losses
-
 
 
 def main():
 
     wins = 0
     losses = 0
-
 
     for _ in range(1000):
 
@@ -97,7 +82,6 @@ def main():
         doors = eliminiate_a_door(expendable_doors, doors)
 
 
-
         verdict = final_door_selection(first_door_selection, prize_door)
 
 
@@ -116,8 +100,6 @@ def main():
 
                               #MAIN
 #------------------------------------------------------------------------------#
-
-
 
 if __name__ == '__main__':
     main()
